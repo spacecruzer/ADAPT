@@ -1,0 +1,215 @@
+show dbs
+use mongoadapt
+db.createCollection("movies")
+//I.inserting movies
+db.movies.insertMany([
+	{
+	title:"Fight Club",
+	writer:"Chuck Palahniuko",
+	year:"1999",
+	actors :["Brad Pitt","Edward Norton"]
+	},
+	{
+		title:"Pulp Fiction",
+		writer:"Quentin Tarantino",
+		year:"1994",
+		actors : ["John Travolta","Uma Thurman"]
+	},
+	{
+		title:"Inglorious Basterds",
+		writer:"Quentin Tarantino",
+		year:"2009",
+		actors : ["Brad Pitt","Diane Kruger","Eli Roth"]
+	},
+	{
+		title:"The Hobbit: An Unexpected Journey",
+		writer:"J.R.R. Tolkein",
+		year:"2012",
+		franchise:"The Hobbit"
+	},
+	{
+		title:"The Hobbit: The Desolation of Smaug",
+		writer:"J.R.R. Tolkein",
+		year:"2013",
+		franchise:"The Hobbit"
+	},
+	{
+		title:"The Hobbit: The Battle of the Five Armies",
+		writer:"J.R.R. Tolkein",
+		year:"2012",
+		franchise:"The Hobbit",
+		synopsis:"Bilbo and Company are forced to engage in a war against an array ofcombatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+	},
+	{
+		title:"Pee Wee Herman's Big Adventure"
+
+	},
+	{
+		title:"Avatar"
+	}
+	]
+	)
+
+//II. Using Find Query
+
+//1
+db.movies.find()
+
+//2
+db.movies.find({writer :"Quentin Tarantino"})
+
+//3
+db.movies.find({actors :"Brad Pitt"})
+
+//4
+db.movies.find({franchise:"The Hobbit"})
+
+//5
+db.movies.find({year:{$gt:"1990",$lt:"2000"}})
+
+//6
+db.movies.find({$or:[{year: {$gt:"2010"}},{year: {$lt:"2000"}}]})
+
+//III. Updating documents
+
+//1
+db.movies.update({_id:ObjectId("5ffd3e123405776f69a1ea5c")}, { $set: {synopsis:"A reluctant hobbit,Bilbo Baggins, sets out to the Lonely Mountain with a spirited group ofdwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+
+//2
+db.movies.update({_id:ObjectId("5ffd3e123405776f69a1ea5d")},{$set :{synopsis:"The dwarves,along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+
+//3
+db.movies.update({_id:ObjectId("5ffd3e123405776f69a1ea5a")},{$push :{actors:"Samuel L.Jackson"}})
+
+//IV. Text Searching
+
+//1
+db.movies.find({synopsis:{$regex:"Bilbo"}})
+
+//2
+db.movies.find({synopsis:{$regex:"Gandalf"}})
+
+//3
+db.movies.find({$and:[{synopsis:{$regex:"Bilbo"}},{synopsis:{$not:/Gandalf/}}]})
+
+//4
+db.movies.find({$or:[{synopsis:{$regex:"dwarves"}},{synopsis:{$regex:"hobbit"}}]})
+
+//5
+db.movies.find({$and:[{synopsis:{$regex:"gold"}},{synopsis:{$regex:"dragon"}}]})
+
+//V Delete Documents
+
+//1
+db.movies.remove({_id: ObjectId("5ffd3e123405776f69a1ea5f")})
+
+//2
+db.movies.remove({_id: ObjectId("5ffd3e123405776f69a1ea60")})
+
+//VI Relationships
+
+db.createCollection("users")
+
+db.users.insertMany([{username:"GoodGuyGreg",
+					first_name:"Good Guy",
+					lastname:"Greg"},
+					{username:"ScumbagSteve",
+					fullname:{first:"Scumbag",last:"Steve"}}])
+
+db.createCollection("posts")
+
+db.posts.insertMany([{username:"GoodGuyGreg",
+						title:"Passes out at a party",
+						body:"Wakes up early and cleans house"
+						},
+						{
+							username:"GoodGuyGreg",
+							title:"Steals your identity",
+							body:"Raises your credit score"
+						},
+						{
+							username:"GoodGuyGreg",
+							title:"Reports a bug in your code",
+							body:"Sends you a pull request"
+						},
+						{
+
+							username:"ScumbagSteve",
+							title:"Borrows something",
+							body:"Sells it"
+						},
+						{
+							username:"ScumbagSteve",
+							title:"Borrows everything",
+							body:"The end"
+						},
+						{
+							username:"ScumbagSteve",
+							title:"Forks your repo on github",
+							body:"Sets to private"
+						}
+
+						])
+
+
+
+db.createCollection("comments")
+
+db.comments.insertMany([{username:"GoodGuyGreg",
+							comment:"Hope you got a good deal!",
+							post:ObjectId("5ffd71b2abdee923fc6e63dc")
+						},
+						{
+							username:"GoodGuyGreg",
+							comment:"What's mine is yours",
+							post:ObjectId("5ffd71b2abdee923fc6e63dd")
+						},
+						{
+							username:"GoodGuyGreg",
+							comment:"Don't violate the licensing agreement!",
+							post:ObjectId("5ffd71b2abdee923fc6e63de")
+						},
+						{
+							username:"ScumbagSteve",
+							comment:"It still isn't clean",
+							post:ObjectId("5ffd71b2abdee923fc6e63d9")
+
+						},
+						{
+							username:"ScumbagSteve",
+							comment:"Denied your PR cause I found a hack",
+							post:ObjectId("5ffd71b2abdee923fc6e63db")
+						}
+						])
+
+// VIIQuery Related Collections
+
+//1
+db.users.find().pretty()
+
+//2
+db.posts.find().pretty()
+
+//3
+db.posts.find({username:"GoodGuyGreg"})
+
+//4
+db.posts.find({username:"ScumbagSteve"})
+
+//5
+db.comments.find().pretty()
+
+//6
+db.comments.find({username:"GoodGuyGreg"})
+
+//7
+db.comments.find({username:"ScumbagSteve"})
+
+//8
+db.posts.aggregate([{$match:{title:"Reports a bug in your code"}},
+					{$lookup:{from:"comments",
+							localField:"_id",
+							foreignField:"post",
+							as:"comments"}
+
+						}]).pretty()
