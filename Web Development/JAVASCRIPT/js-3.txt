@@ -1,0 +1,230 @@
+Assignment-3
+
+1
+class Rectangle { 
+    constructor(width,height){
+      this.width=width;
+      this.height=height;
+    }
+    getwidth(){
+       console.log('The width is : '+this.width);
+   }
+   getheight(){
+      console.log('The height is : '+this.height);
+   }
+  }
+  var r1 = new Rectangle(10,11)
+  r1.getwidth();
+  r1.getheight();
+  
+
+
+2
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+ 
+
+
+
+
+
+ get area() {
+    return this.calcArea();
+  }
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(4, 5);
+
+console.log(square.area);
+
+
+3
+class rectangle{
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    getArea()
+    {
+      console.log(this.width*this.height);
+    }
+    }
+    
+
+
+const ram = new rectangle(4,5);
+    console.log(ram.width)
+    console.log(ram.height)
+    ram.height=50;
+    ram.getArea()
+   
+
+4 function person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+const Ram = new person("Raju", "Krishna");
+console.log(Ram.firstName)
+console.log(Ram.lastName)
+Ram.lastName="Arjun";
+console.log(Ram.firstName)
+console.log(Ram.lastName)
+
+5
+function person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+
+
+
+
+
+const Ram = new person("Raju", "Krishna");
+console.log(Ram.middleName);
+Ram.middleName="Arjun";
+console.log(Ram.firstName);
+console.log(Ram.middleName);
+console.log(Ram.lastName);
+
+
+6
+
+function person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+var firstName = 'ram';
+var lastName = 'Arjun';
+var fullName = `${firstName} ${lastName}`;
+eval(`${firstName} ${lastName}`);
+
+
+
+7
+
+function person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+var firstName = 'ram';
+var lastName = 'Arjun';
+var fullName = `${firstName} ${lastName}`;
+paarseJSON(fullName);
+
+
+
+1
+
+function person(fname, lname, age, skills, dateofbirth, address, married, profession) {
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.skills = skills;
+    this.dateofbirth = dateofbirth;
+    this.address = address;
+    this.married = married;
+    this.profession = profession;
+
+}
+
+person1 = new person("MS", "Dhoni", 40, ["Wicketkeeper"], "07/07/1981", { city: "Warangal", pincode: "506015" }, "false", "Captain")
+person2 = new person("Raina", "Suresh", 37, "Batsmen", "08/06/1987", { city: "Hydrabad", pincode: "512452" }, "false", "Vice Captain")
+
+console.log(person1);
+console.log(person2);
+
+
+
+2
+function person(fname, lname, age, skills, dateofbirth, address, married, profession) {
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.skills = skills;
+    this.dateofbirth = dateofbirth;
+    this.address = address;
+    this.married = married;
+    this.profession = profession;
+
+}
+
+amithab = new person("amithab", "bachan", 22, ["c"], "24/10/1996", { city: "hyderabad", pincode: "521185" }, "false", "sr analyst")
+abhisheik = new person("abhisheik", 21, "HTML", "08/06/1997", "false", "jr analyst")
+var abhisheik = Object.create(amithab);
+
+console.log(amithab);
+console.log(abhisheik.lname);
+console.log(abhisheik.address);
+
+
+
+
+
+
+
+
+
+3
+
+function person(fname, lname, age, skills, dateofbirth, address, married, profession) {
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.skills = skills;
+    this.dateofbirth = dateofbirth;
+    this.address = address;
+    this.married = married;
+    this.profession = profession;
+
+}
+
+amithab = new person("amithab", "bachan", 22, ["c"], "24/10/1996", { city: "hyderabad", pincode: "521185" }, "false", "sr analyst")
+abhisheik = new person("abhisheik", 21, "HTML", "08/06/1997", "false", "jr analyst")
+var abhisheik = Object.create(amithab);
+Aaradhya = new person("aaradhya", amithab.lname, amithab.age, "HTML", "08/06/1997", abhisheik.address, abhisheik.married, amithab.profession);
+
+console.log(amithab);
+console.log(abhisheik.lname);
+console.log(abhisheik.address);
+console.log(Aaradhya);
+
+
+
+4
+function BankAccount(accountNumber, accountHolderName, accountBalance, isSalary = false, odLimit = NaN) {
+    this.accountNumber = accountNumber;
+    this.accountHolderName = accountHolderName;
+    this.accountBalance = accountBalance;
+    this.isSalary = isSalary;
+    this.odLimit = odLimit;
+}
+
+BankAccount.withDraw() = function(drawAmount) {
+    if (this.isSalary) {
+        if (this.accountBalance > drawAmount) {
+            this.accountBalance -= drawAmount;
+            console.log('Withdrawn Successfully');
+        }
+        console.log('Insufficient Funds');
+    } else {
+        if (drawAmount < accountBalance + odLimit) {
+            this.accountBalance -= drawAmount;
+            console.log('Withdrawn Successfully');
+        }
+        console.log('Insufficient Funds');
+    }
+}
+var account1 = new BankAccount(1, 'Ram', 10000, true);
+var account1 = new BankAccount(2, 'Krishna', 35000, false, 1000);
+
+
+

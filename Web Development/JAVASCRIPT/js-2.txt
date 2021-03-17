@@ -1,0 +1,157 @@
+q-1
+
+const compose = (a, b) => (data) => a(b(data))
+
+const square = (num) => {
+return num * num
+}
+
+const double = (num) => {
+return num * 2
+}
+
+const getNumber = compose (square, double)
+console.log(getNumber(5));
+
+2
+const compose = (a, b) => (data) => a(b(data))
+
+const square = (num) => {
+return num * num
+}
+
+const double = (num) => {
+return num * 2
+}
+
+const f1 = compose (square, double)
+console.log(f1(5));
+
+
+const compose1 = (a, b) => (data) => a(b(data))
+
+const double1 = (num) => {
+return num * 2
+}
+const square1 = (num) => {
+return num * num
+}
+
+const f2 = compose1 (double1, square1)
+console.log(f2(5));
+
+console.log(f1(f2(5)))
+
+var compose = (a, b) => (data) => a(b(data))
+var double = (num) => {
+return num * 2
+}
+var square = (num) => {
+return num * num
+}
+var f2 = compose (double, square)
+console.log(f2(10));
+console.log(f2(20));
+
+
+
+
+Q-3
+
+let a = [1,3,5,4,2];
+function check(array,isEven){
+    isEven(array);
+}
+function isEven1(a)
+{
+  if(a%2==0){console.log("true")}
+  else{console.log("False")}
+}
+ function isEven(a){
+   for( var i=0;i<a.length;i++){
+     if(a[i]%2==0){console.log(a[i]);
+                  break;}
+   }
+}
+isEven1(3);
+isEven1(4);
+check(a,isEven)
+
+
+Q-4
+
+var a= [1,2,3,4];
+var newArray1 = [];
+var newArray2 = [];
+
+function mapElements1(array,square){
+    array.map(square);
+}
+function mapElements2(array,mathsqrt){
+    array.map(mathsqrt);
+}
+function square(n){
+    n = n*n;
+    newArray1.push(n);
+}
+
+function mathsqrt(n)
+{
+  n=n^0.5;
+  newArray2.push(n);
+}
+mapElements1(a,square);
+mapElements2(a,mathsqrt);
+console.log(newArray1.join(","));
+console.log(newArray2.join(","));
+
+
+
+Exercise-2
+Q-1
+
+function find(arr, func) {
+    while (arr[0] !== undefined) {
+        if (func(arr[0]))
+            return arr[0];
+        return find(arr.slice(1, arr.length), func);
+    }
+}
+
+console.log(find([1, 3, 5, 4, 2], (x) => !(x % 2)));
+
+Q-2
+var arr = [1, 2, 3, 4, 5];
+function square(arr) {
+   var result=[].concat(arr);
+   result.forEach(function(i){
+      n=i*i;
+      console.log(n);
+   })
+   return result;
+ }
+function square1(arr) {
+   var result1=[].concat(arr);
+   result1.forEach(function(i){
+      n=i^0.5;
+      console.log(n);
+   })
+   return result1;
+ }
+
+console.log(square(arr));
+console.log(square1(arr));
+
+
+
+
+
+3
+
+function double(num) {
+    return num * 2;
+}
+console.log(double);
+
+console.log(double);
+
