@@ -1,0 +1,318 @@
+Q-1
+
+<!DOCTYPE html>
+<html lang="en">
+<title></title>
+<h1 style="background-color:red;">This is a heading</h1>
+<head>
+</head>
+<body style="background-color:yellow;">
+<p style="background-color:green;">This is a paragraph</p>
+</body>
+</html>
+
+
+
+Q-2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<meta charset="UTF-8">
+<title>Q2</title>
+</head>
+<body>
+Create a link of an image : <fieldset style="width:2px">&#128522;</fieldset>
+No border around the image, but still a link : &#128522;
+</body>
+</html>
+
+Q-3
+<!DOCTYPE html>
+<html lang="en">
+<title></title>
+<h1>One column:</h1>
+<head>
+    <style>table, td {border: 1px solid black;}</style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>100</td>
+    </tr>
+</table>
+</body>
+<h2>One Row Three Columns:</h2>
+<head>
+    <style>table, td {border: 1px solid black;}</style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+</table>
+</body>
+<h3> Two Row Three Columns:</h3>
+<head>
+    <style>table, td {border: 1px solid black;}</style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+    </tr>
+</table>
+</body>
+
+
+</html>
+
+
+Q-4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+<table colspan="3">This table has borders:
+    <tr>
+        <td><fieldset>100</fieldset></td>
+        <td><fieldset>200</fieldset></td>
+        <td><fieldset>300</fieldset></td>
+    </tr>
+    <tr>
+        <td><fieldset>400</fieldset></td>
+        <td><fieldset>500</fieldset></td>
+        <td><fieldset>600</fieldset></td>
+    </tr>
+</table>
+<table colspan="3">And this table has no borders:
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+    </tr>
+</table>
+</body>
+</html>
+
+
+Q-5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<h1>Number List:</h1>
+<ol type="1">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+<h2>Letter List:</h2>
+<ol type="A">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+<h3>LowerCase Letter List:</h3>
+<ol type="a">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+<h4>Roman Number List:</h4>
+<ol type="I">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+</head>
+</html>
+
+
+Q-6
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+<Form action="results.Html" method="GET">
+    <div>
+        <label for="name">Name</label>
+        <input  type= "text" name="name" id="name">
+    </div>
+    <div>
+        <label>
+            password
+            <input type="password" name="password">
+        </label>
+    </div>
+    <button type="reset"> Reset</button>
+    <button type="submit"> Submit</button>
+</Form>
+</body>
+
+</html>
+
+
+Q-7
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q7</title>
+</head>
+<body>
+<br>
+<label>I have a bike
+    <input type="checkbox" name="I have a bike" >
+</label>
+<br>
+<label>I have a car
+    <input type="checkbox" name="I have a car" >
+</label>
+</br>
+<br>
+<button type="submit">Submit</button>
+</body>
+</html>
+
+
+
+
+Q-8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8</title>
+</head>
+<frameset rows="20%,80%">
+    <frame src="top.html"/>
+    <frameset cols="50%,50%">
+        <frame src="left-frame.html"/>
+        <frame src="right-frame.html"/>
+    </frameset>
+</frameset>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>top</title>
+</head>
+<body>
+<h1>Top</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>left</title>
+</head>
+<body>
+<h1>left</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>right</title>
+</head>
+<body>
+<h1>Right</h1>
+</body>
+</html>
+
+
+
+Q-9
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8</title>
+</head>
+<frameset rows="20%,80%" cols="50%,50%">
+    <frame src="topleft.html"/>
+    <frame src="topright.html"/>
+    <frame src="bottomleft-frame.html"/>
+    <frame src="bottomright-frame.html"/>
+</frameset>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>topright</title>
+</head>
+<body>
+<h1>Topright</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>topleft</title>
+</head>
+<body>
+<h1>Topleft</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bottomleft</title>
+</head>
+<body>
+<h1>Bottomleft</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bottomright</title>
+</head>
+<body>
+<h1>BottomRight</h1>
+</body>
+</html>
+
